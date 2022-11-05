@@ -1,7 +1,5 @@
 import React from "react";
-import './login.css';
-import Apilogin from "../apilogin/Apilogin";
-import axios from "axios";
+import { Link } from 'react-router-dom'
 function Menu() {
     return (
         <div>
@@ -20,9 +18,9 @@ function Menu() {
                             </div>
                         </div>
                         <div className="header_logo-tablet">
-                            <a href="/#" className="header_logo-link">
-                                <img src="https://www.leoasher.dev/static/media/logofull.f2aa3784.png" alt="" className="logo_img"/>
-                            </a>
+                            <Link to="" className="header_logo-link">
+                                <img src="/static/media/logofull.f2aa3784.png" alt="" className="logo_img"/>
+                            </Link>
                         </div>
                         <div className="header_settings">
                             <div className="settings-language">
@@ -32,7 +30,12 @@ function Menu() {
                                 <i className="bi bi-moon"></i>
                             </div>
                             <div className="setting-check-log">
-                                <i className="bi bi-box-arrow-in-left"></i>
+                                
+                                <Link to="login">
+                                    <i className="bi bi-box-arrow-in-left">
+                                        
+                                    </i>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -83,52 +86,12 @@ function Menu() {
                             <a href="/#" className="nav-item-link">title.contact</a>
                         </li>
                         <li className="nav-item">
-                            <a href="/#" className="nav-item-link account" onClick={() => Loginn()} >title.account</a>
+                            <a href="/#" className="nav-item-link">title.account</a>
                         </li>
                     </ul>
-                </div>
-            </div>
-            <div className = "login" id> 
-                <div className = "login-khung">
-                    <div className="login-khung-lable">
-
-                        <label className="login-khung-text"> Đăng nhập </label>
-                        <div className = "exit" onClick={ () => exitt()}>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 icon-exit">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-    </svg>
-
-                        </div>
-                    </div>
-                    <div className="login-user" >
-                        <input id="username" className="login-usertext" placeholder = " Tên đăng nhập"  ></input>
-                        <input id = "password" className="login-usertext" type={"password"} placeholder = " Mật khẩu"></input>
-                    </div>
-                    <button className="login-btn" onClick={() => clicklogin()}>
-                        Đăng nhập
-                    </button>
-                    <div className="signUp" > Đăng kí</div>
                 </div>
             </div>
         </div>
     )
 }
-function exitt(){
-    var signin = document.querySelector('.login');
-    signin.style.display = 'none';
-}
-function Loginn(){
-    var signin = document.querySelector('.login');
-    signin.style.display = 'block';
-}
-function clicklogin(){
-    checklogin();
-
-}
-function checklogin(){ 
-    let username = document.getElementById("username");
-    let password = document.getElementById("password");
-    Apilogin(username, password);
-}
-
 export default Menu

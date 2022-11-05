@@ -4,7 +4,6 @@ import './base.css';
 import Menu from "./components/menu/Menu";
 import { Route, Routes } from 'react-router-dom';
 import routes from "./routes";
-import Api from "./components/apilogin/Apilogin";
 function App() {
     return (
         <div>
